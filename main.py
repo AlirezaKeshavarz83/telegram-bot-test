@@ -5,9 +5,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-def error(update, context):
-    logger.warning('Update "%s" caused error "%s"', update, context.error)
-
 def code(update, context):
     update.message.reply_text(update.message.chat.id)
 
@@ -16,8 +13,6 @@ updater = Updater("1729081335:AAFTRl8eBQ8wZ79-1Lw7Yi1vd8vXVuiKHJE", use_context=
 dp = updater.dispatcher
 
 dp.add_handler(CommandHandler("code", code))
-
-dp.add_error_handler(error)
 
 updater.start_polling()
 
