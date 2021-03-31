@@ -7,6 +7,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 def code(update, context):
     update.message.reply_text(update.message.chat.id)
+    update.message.reply_text(context)
 
 updater = Updater("1729081335:AAFTRl8eBQ8wZ79-1Lw7Yi1vd8vXVuiKHJE", use_context=True)
 
